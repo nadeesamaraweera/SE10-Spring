@@ -42,10 +42,16 @@ private BlogRepository blogRepository;
            }
 
       @GetMapping("/getallpost")
-      public List<Blog> getAllPost(){
-       return blogRepository.findAll();
+      public List<Blog> getAllPost() {
+          return blogRepository.findAll();
+      }
+
+       @PutMapping("/updatepost")
+          public void updatePost(@RequestBody Blog blog){
+              blogRepository.save(blog);
+
+          }
 
 
       }
 
-}
