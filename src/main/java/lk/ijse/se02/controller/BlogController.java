@@ -50,7 +50,15 @@ private BlogRepository blogRepository;
           public void updatePost(@RequestBody Blog blog){
               blogRepository.save(blog);
 
-          }
+
+       }
+
+    @DeleteMapping("/deletepost/{id}")
+    public void deletePost(@PathVariable int id){
+        blogRepository.deleteById(id);
+
+
+    }
 
 
       }
